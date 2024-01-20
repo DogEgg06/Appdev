@@ -72,15 +72,6 @@ def retrieve_users():
 
     return render_template('retrieveUsers.html', count=len(users_list), users_list=users_list)
 
-@app.route('/viewUser')
-def view_user():
-    users_dict = {}
-    db = shelve.open('user.db', 'r')
-    users_dict = db['Users']
-    db.close()
-
-    return render_template('viewUser.html')
-
 @app.route('/retrieveCustomers')
 def retrieve_customers():
     customers_dict = {}
